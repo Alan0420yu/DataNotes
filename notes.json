@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sql-select", "title": "SQL SELECT 與 WHERE", "category": "SQL", "level": "入門", "summary": "從資料表挑選欄位，並透過條件篩選需要的資料。", "content": ["SELECT 用來指定查詢欄位，FROM 指定資料表，WHERE 則設定篩選條件。", "例如查詢成績達 80 分以上的學生，可以把條件寫在 WHERE 後面。", "字串常以單引號包住；實際語法細節可能依資料庫系統略有差異。"], "example": {"language": "sql", "code": "SELECT name, score\nFROM students\nWHERE score >= 80;"}, "tags": ["SQL 基礎", "查詢", "條件"], "updatedAt": "2026-11-15"
+  },
+  {
+    "id": "sql-joins", "title": "SQL JOIN 資料表連接", "category": "SQL", "level": "中階", "summary": "利用共同欄位，將兩張資料表的資訊整合。", "content": ["INNER JOIN 只保留兩邊連接條件相符的資料列。", "LEFT JOIN 會保留左側資料表的所有資料列；若右側沒有對應資料，右側欄位通常為 NULL。", "實務上應明確指定表格別名及 ON 條件，避免欄位名稱混淆。"], "example": {"language": "sql", "code": "SELECT s.name, c.course_name\nFROM students AS s\nINNER JOIN courses AS c\n  ON s.course_id = c.id;"}, "tags": ["JOIN", "資料整合", "關聯式資料庫"], "updatedAt": "2026-11-15"
+  },
+  {
+    "id": "python-pandas", "title": "Python Pandas 資料讀取", "category": "Python", "level": "入門", "summary": "使用 Pandas 載入 CSV，快速查看資料前幾列。", "content": ["Pandas 的 DataFrame 適合處理表格式資料。", "read_csv() 可將 CSV 載入 DataFrame，head() 預設顯示前五列。", "在分析前，可先檢查欄位名稱、缺失值與資料型態。"], "example": {"language": "python", "code": "import pandas as pd\n\ndf = pd.read_csv('data.csv')\nprint(df.head())\nprint(df.info())"}, "tags": ["Pandas", "CSV", "資料處理"], "updatedAt": "2026-11-15"
+  },
+  {
+    "id": "statistics-mean-median", "title": "平均數與中位數", "category": "統計學", "level": "入門", "summary": "理解兩種常見的集中趨勢指標，以及離群值的影響。", "content": ["平均數是數值總和除以觀測數量；中位數則是排序後位於中間的數值。", "當資料有極端值時，平均數可能明顯受到影響，中位數通常較穩健。", "選擇統計量時，應同時觀察分布與研究目的。"], "example": {"language": "python", "code": "values = [10, 12, 13, 15, 100]\nimport statistics\nprint(statistics.mean(values))    # 30\nprint(statistics.median(values))  # 13"}, "tags": ["敘述統計", "集中趨勢", "離群值"], "updatedAt": "2026-11-15"
+  },
+  {
+    "id": "analytics-cleaning", "title": "資料清理的基本流程", "category": "資料分析", "level": "入門", "summary": "在視覺化與建模之前，先檢查缺值、重複值與資料型態。", "content": ["資料清理通常包含缺失值檢查、重複紀錄檢查、欄位型態確認，以及異常值檢視。", "缺失值不一定應直接刪除；應依資料產生原因、缺失比例與分析目的決定處理方式。", "保留清理步驟紀錄，能讓分析結果更容易重現。"], "example": {"language": "python", "code": "import pandas as pd\n\ndf = pd.read_csv('data.csv')\nprint(df.isna().sum())\nprint(df.duplicated().sum())\nprint(df.dtypes)"}, "tags": ["EDA", "缺失值", "資料品質"], "updatedAt": "2026-11-15"
+  },
+  {
+    "id": "analytics-visualization", "title": "如何選擇合適的圖表", "category": "資料分析", "level": "中階", "summary": "依照比較、趨勢、分布與關係，挑選合適的視覺化方法。", "content": ["長條圖適合比較類別間的數值；折線圖適合呈現隨時間變化的趨勢。", "直方圖可觀察單一數值變數的分布；散佈圖適合探索兩個數值變數之間的關係。", "圖表應標示軸名稱與單位，並避免以截斷座標軸造成誤導。"], "example": {"language": "python", "code": "import matplotlib.pyplot as plt\n\nmonths = [1, 2, 3]\nsales = [20, 28, 25]\nplt.plot(months, sales, marker='o')\nplt.xlabel('Month')\nplt.ylabel('Sales')\nplt.show()"}, "tags": ["視覺化", "圖表", "EDA"], "updatedAt": "2026-11-15"
+  }
+]

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1020">
+  <meta name="description" content="DataNotes：持續擴充的資料科學學習知識庫，收錄 SQL、Python、統計學與資料分析筆記。">
+  <title>DataNotes｜資料科學學習知識庫</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="網站導覽">
+      <a class="brand" href="#/"><span class="brand-mark">D<span>·</span></span><span>DataNotes<small>LEARNING SPACE</small></span></a>
+      <div class="side-heading">學習空間</div>
+      <nav class="nav-links" aria-label="筆記分類">
+        <button class="nav-link active" data-category="全部" type="button"><span>▦</span> 全部筆記 <span class="nav-count" id="count-all">0</span></button>
+        <button class="nav-link" data-category="SQL" type="button"><span>⌘</span> SQL <span class="nav-count" id="count-sql">0</span></button>
+        <button class="nav-link" data-category="Python" type="button"><span>⌁</span> Python <span class="nav-count" id="count-python">0</span></button>
+        <button class="nav-link" data-category="統計學" type="button"><span>∑</span> 統計學 <span class="nav-count" id="count-stats">0</span></button>
+        <button class="nav-link" data-category="資料分析" type="button"><span>◫</span> 資料分析 <span class="nav-count" id="count-analytics">0</span></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="tiny-label">BUILT TO GROW</div><p>一套規則，持續累積知識。</p><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+    </aside>
+    <main class="main-content" id="main">
+      <header class="topbar"><span class="breadcrumb">Workspace <span>/</span> Knowledge Base</span><span class="top-status"><span class="status-dot"></span> 持續更新中</span></header>
+      <section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><div class="eyebrow"><span class="sparkle">✦</span> YOUR PERSONAL KNOWLEDGE BASE</div><h1 id="hero-title">讓每一次學習，<br><span>都成為下一次的起點。</span></h1><p>SQL、Python、統計學與資料分析。將零散知識整理成可以搜尋、閱讀、持續成長的個人筆記庫。</p><a class="hero-button" href="#/">探索學習筆記 <span aria-hidden="true">↗</span></a></div><div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="art-card"><div class="art-dots">● ● ●</div><div class="art-line short"></div><div class="art-line"></div><div class="art-line mid"></div><div class="art-code"><span>SELECT</span> * <span>FROM</span> knowledge;<br><span>WHERE</span> curiosity = true;</div></div></div></section>
+      <section class="stats" aria-label="知識庫統計"><div class="stat"><span class="stat-icon">▤</span><div><strong id="stat-total">—</strong><span>學習筆記</span></div></div><div class="stat"><span class="stat-icon purple">◈</span><div><strong id="stat-categories">—</strong><span>知識分類</span></div></div><div class="stat"><span class="stat-icon green">✦</span><div><strong>∞</strong><span>持續擴充</span></div></div></section>
+      <section id="notes" class="notes-section" aria-labelledby="notes-heading"><div class="section-heading"><div><div class="eyebrow section-eyebrow">EXPLORE & LEARN</div><h2 id="notes-heading">學習筆記 <span class="section-count" id="result-count"></span></h2><p>從基礎觀念到實作範例，找到你想學的內容。</p></div></div>
+        <div class="toolbar"><label class="search-wrap"><span aria-hidden="true">⌕</span><span class="sr-only">搜尋筆記</span><input id="search-input" type="search" placeholder="搜尋筆記、關鍵字或標籤…" autocomplete="off"></label><label class="sort-wrap"><span class="sr-only">排序方式</span><select id="sort-select"><option value="newest">最新更新</option><option value="title">標題排序</option><option value="category">分類排序</option></select></label></div>
+        <div class="filter-chips" id="filter-chips" aria-label="篩選分類"><button type="button" class="chip active" data-category="全部">全部</button><button type="button" class="chip" data-category="SQL">SQL</button><button type="button" class="chip" data-category="Python">Python</button><button type="button" class="chip" data-category="統計學">統計學</button><button type="button" class="chip" data-category="資料分析">資料分析</button></div>
+        <div class="note-grid" id="note-grid" aria-live="polite" aria-busy="true"><p class="feedback">正在載入筆記…</p></div>
+        <div id="note-detail" class="note-detail hidden" tabindex="-1"></div>
+      </section>
+      <footer class="footer"><span>© 2026 DataNotes · Learn. Build. Repeat.</span><span>Powered by simple rules & curiosity ✦</span></footer>
+    </main>
+  </div>
+</body>
+</html>
